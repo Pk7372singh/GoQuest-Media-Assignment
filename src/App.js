@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { AppProvider } from './context/AppContext';
+import VideoPlayer from './components/VideoPlayer';
+import AudioRecorder from './components/AudioRecorder';
+import DialogueDisplay from './components/DialogueDisplay';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <div className="min-h-screen bg-gray-100 p-6">
+        <h1 className="text-3xl font-bold text-center mb-8 text-blue-600">Video & Audio Application</h1>
+        <VideoPlayer />
+        <AudioRecorder />
+        <DialogueDisplay />
+      </div>
+    </AppProvider>
   );
 }
 
